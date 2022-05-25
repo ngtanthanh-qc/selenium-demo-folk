@@ -78,4 +78,7 @@ public class amazondemo {
 			driver.quit();
 		}
 
+	public static void main(String[] args) {
+	}
+
 	}
