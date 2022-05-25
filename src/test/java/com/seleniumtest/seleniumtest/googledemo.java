@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 	public class googledemo {
+		String os = System.getProperty("os.name");
+
 		private WebDriver driver;
 
 		@Test(priority=0) 
@@ -22,8 +24,12 @@ import org.testng.annotations.AfterTest;
 
 			@BeforeTest
 			public void beforeTest() {
-				System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver");
-			 driver = new ChromeDriver();
+				String os = System.getProperty("os.name");
+				if(os.contains("Windows")){
+					System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver.exe");
+				}
+				System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+				driver = new ChromeDriver();
 			}
 
 			@AfterTest
