@@ -1,5 +1,6 @@
 package com.seleniumtest.seleniumtest;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.Point;
@@ -29,7 +30,14 @@ import org.testng.annotations.AfterTest;
 					System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver.exe");
 				} else {
 					System.setProperty("webdriver.chrome.driver","//usr//bin//chromedriver");}
-				driver = new ChromeDriver();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("start-maximized"); // open Browser in maximized mode
+				options.addArguments("disable-infobars"); // disabling infobars
+				options.addArguments("--disable-extensions"); // disabling extensions
+				options.addArguments("--disable-gpu"); // applicable to windows os only
+				options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+				options.addArguments("--no-sandbox"); // Bypass OS security model
+				driver = new ChromeDriver(options);
 			}
 
 			@AfterTest
