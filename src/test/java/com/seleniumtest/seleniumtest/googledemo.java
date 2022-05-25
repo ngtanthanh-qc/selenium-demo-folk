@@ -22,7 +22,7 @@ import org.testng.annotations.AfterTest;
 
 			@BeforeTest
 			public void beforeTest() {
-				System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver");
 			 driver = new ChromeDriver();
 			}
 
