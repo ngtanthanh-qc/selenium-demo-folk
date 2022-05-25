@@ -57,8 +57,8 @@ public class amazondemo {
 			String os = System.getProperty("os.name");
 			if(os.contains("Windows")){
 				System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver.exe");
-			}
-			System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+			} else {
+			System.setProperty("webdriver.chrome.driver","//usr//bin//chromedriver");}
 			driver = new ChromeDriver();
 		}
 
@@ -66,4 +66,5 @@ public class amazondemo {
 		public void afterTest() {
 			driver.quit();
 		}
+
 	}
