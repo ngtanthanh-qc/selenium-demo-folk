@@ -37,6 +37,9 @@ import org.testng.annotations.AfterTest;
 				options.addArguments("--disable-gpu"); // applicable to windows os only
 				options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 				options.addArguments("--no-sandbox"); // Bypass OS security model
+				options.addArguments("--disable-setuid-sandbox");
+				options.addArguments("--disable-dev-shm-using");
+				options.addArguments("--headless");
 				driver = new ChromeDriver(options);
 			}
 

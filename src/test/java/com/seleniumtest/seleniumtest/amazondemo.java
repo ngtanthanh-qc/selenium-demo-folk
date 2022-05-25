@@ -59,7 +59,7 @@ public class amazondemo {
 			if(os.contains("Windows")){
 				System.setProperty("webdriver.chrome.driver","browserDrivers/chromedriver.exe");
 			} else {
-			System.setProperty("webdriver.chrome.driver","//usr//bin//chromedriver");}
+				System.setProperty("webdriver.chrome.driver","//usr//bin//chromedriver");}
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
@@ -67,6 +67,9 @@ public class amazondemo {
 			options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 			options.addArguments("--no-sandbox"); // Bypass OS security model
+			options.addArguments("--disable-setuid-sandbox");
+			options.addArguments("--disable-dev-shm-using");
+			options.addArguments("--headless");
 			driver = new ChromeDriver(options);
 		}
 
