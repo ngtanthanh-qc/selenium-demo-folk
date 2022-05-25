@@ -69,7 +69,7 @@ public class amazondemo {
 			options.addArguments("--no-sandbox"); // Bypass OS security model
 			options.addArguments("--disable-setuid-sandbox");
 			options.addArguments("--disable-dev-shm-using");
-			options.addArguments("--headless");
+//			options.addArguments("--headless");
 			driver = new ChromeDriver(options);
 		}
 
